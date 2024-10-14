@@ -7,7 +7,8 @@ SELECT avg(salary)
 FROM instructor
 WHERE dept_name = 'Comp. Sci.';
 ```
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/63b02585-8c39-4cc1-aec9-2dc8d99f3f2d)
+
 
 - Find the all number of tuple in the course relation
 ```
@@ -34,7 +35,7 @@ GROUP BY dept_name
 HAVING avg(salary)>42000;
 ```
 - 유의 해야 할 점은 Having절의 쿼리는 GROUP BY가 이루어 진 후에 실행이 된다는 점으로, Where의 경우 GROUP BY 이전에 쿼리가 실행이 되서 같이 사용할 수 없음
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/83ce77ec-e615-45ee-9e47-a86cb1764ec4)
 
 
 # 중첩 서브쿼리 (Nested Subqueries)
@@ -66,7 +67,8 @@ WHERE semester = 'Fall' AND year = 2017
     );
 ``` 
 - WHERE 절에서 서브쿼리를 이용했음
-![alt text](image-3.png)
+![image](https://github.com/user-attachments/assets/d1446a9c-8720-4b61-8bfa-37c159a1ef44)
+
 
 ```
 SELECT DISTINCT(course_id)
@@ -79,7 +81,8 @@ WHERE semester = 'Fall' AND year = 2017
     );
 ``` 
 
-![alt text](image-4.png)
+![image](https://github.com/user-attachments/assets/62cf276a-e733-4cd2-b5b0-b9beda81eec9)
+
 
 - Find the total # of unique student who have taken course sections taught by the instructor with ID 10101
 
@@ -95,7 +98,8 @@ WHWERE (course_id, sec_id, semester, year) in(
 ```
 
 ## Set Comparision -"Some" Clauses => ANY와 같다.
-![alt text](image-5.png)
+![image](https://github.com/user-attachments/assets/c5179bdc-1312-4a8b-9203-655beea9cef4)
+
 - Find names of instructors with salary greater than that
 of some (at least one) instructor in the Biology
 department.
@@ -123,7 +127,8 @@ where salary> ANY<SOME>(SELECT salary
     WHERE dept_name = 'Biology');
 ```
 ## Set Comparision -"ALL" Clauses 
-![alt text](image-6.png)
+![image](https://github.com/user-attachments/assets/44b3da26-3ffd-4b8b-8839-64322d6ff616)
+
 #### 중요한 점은 ALL의 경우 모든 조건을 만족해야만 True값을 리턴한다는 점!
 - Find the names of all instructors whose salary is greater than the salary of all
 instructors in the Biology department
@@ -138,7 +143,7 @@ WHERE salary > ALL (
 );
 ```
 ## Test for Empty Relations
-![alt text](image-7.png)
+![image](https://github.com/user-attachments/assets/c7ec49bd-2eac-4a61-8003-53a4be720f82)
 #### 만약 서브쿼리가 비어있지 않은경우 (값을 리턴한 경우) True를 반환함 반대는 False
 - EXIST 를 사용해서 - Find all courses offered in Fall 2017 and in Spring 2018 를 찾는 다른 방법
 
